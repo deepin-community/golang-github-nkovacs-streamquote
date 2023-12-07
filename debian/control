@@ -1,15 +1,35 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-nkovacs-streamquote
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Anthony Fok <foka@debian.org>,
+           Martina Ferrari <tina@debian.org>,
+Section: golang
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+Build-Depends-Indep: golang-any,
+Standards-Version: 4.6.1.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-nkovacs-streamquote
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-nkovacs-streamquote.git
+Homepage: https://github.com/nkovacs/streamquote
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/nkovacs/streamquote
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-nkovacs-streamquote-dev
+Architecture: all
+Depends: ${misc:Depends},
+Description: Go package providing a streaming version of strconv.Quote
+ This package provides a streaming version of strconv.Quote.
+ .
+ It allows you to quote the data in an io.Reader and write it out to an
+ io.Writer without having to store the entire input and the entire output
+ in memory.
+ .
+ Its primary use case is go.rice (https://github.com/GeertJohan/go.rice)
+ and similar tools, which need to convert lots of files, some of them
+ quite large, to go strings.
+ .
+     converter := streamquote.New()
+     converter.Convert(inputfile, outfile)
+ .
+ Unlike strconv.Quote, it does not add quotes around the output.
