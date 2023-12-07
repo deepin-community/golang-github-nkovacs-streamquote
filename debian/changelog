@@ -1,5 +1,36 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-nkovacs-streamquote (1.0.0-5) unstable; urgency=medium
 
-  * Initial release
+  * Update patch to only change behaviour on go1.19 and up.
+  * Add myself as Uploader.
+  * debian/control: Minor updates for lintian.
+    Update compat level, Standards-Version, and Section; with no changes.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Martina Ferrari <tina@debian.org>  Mon, 29 Aug 2022 13:10:32 +0000
+
+golang-github-nkovacs-streamquote (1.0.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch to Convert code to match changes in go 1.18.
+    Closes: #1017267
+
+ -- Martina Ferrari <tina@debian.org>  Tue, 23 Aug 2022 15:36:46 +0000
+
+golang-github-nkovacs-streamquote (1.0.0-3) UNRELEASED; urgency=low
+
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Fri, 28 Aug 2020 23:37:18 -0000
+
+golang-github-nkovacs-streamquote (1.0.0-2) unstable; urgency=medium
+
+  * Source-only upload for migration into testing
+
+ -- Anthony Fok <foka@debian.org>  Mon, 06 Jan 2020 03:42:33 -0700
+
+golang-github-nkovacs-streamquote (1.0.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #946027)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 02 Dec 2019 22:09:45 -0700
